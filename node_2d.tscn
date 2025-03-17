@@ -1,0 +1,190 @@
+[gd_scene load_steps=13 format=3 uid="uid://l7lmrcupx0f0"]
+
+[ext_resource type="Texture2D" uid="uid://b8l2yhafek5xh" path="res://Taskbar.png" id="1_0hol4"]
+[ext_resource type="Script" uid="uid://dip0nt68gdf8c" path="res://Godot (app).gd" id="2_0e48y"]
+[ext_resource type="Texture2D" uid="uid://ccuy2snk2dal7" path="res://chrome.png" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://bi1sqbspj3uy5" path="res://Youtube.jpg" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://bebilqf4pejxp" path="res://Reddit.png" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://bkyv0v8iegxx6" path="res://Text editor.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://coyb8twhfg5jr" path="res://text editor.png" id="6_kdubu"]
+[ext_resource type="Script" uid="uid://cgean1dsd4p3h" path="res://Nasm.gd" id="8_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://wuxp0fhr0u8b" path="res://Nasm.png" id="8_rj586"]
+[ext_resource type="Texture2D" uid="uid://cj54u57cqieu7" path="res://Python.png" id="10_hqns4"]
+[ext_resource type="Texture2D" uid="uid://bkdfsv6na25fl" path="res://Wallpaper 2.jpg" id="10_ir8iy"]
+[ext_resource type="Script" uid="uid://dr4c3uk0nnl1r" path="res://Python.gd" id="10_x0ka3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Wallpaper" type="Sprite2D" parent="."]
+z_index = -4096
+scale = Vector2(0.599583, 0.603056)
+texture = ExtResource("10_ir8iy")
+centered = false
+
+[node name="Chrome" type="Node2D" parent="."]
+script = ExtResource("2_0e48y")
+
+[node name="App" type="Button" parent="Chrome"]
+offset_left = 12.0
+offset_right = 1220.0
+offset_bottom = 1208.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("3_0hol4")
+
+[node name="Label" type="Label" parent="Chrome"]
+offset_left = 3.0
+offset_top = 112.0
+offset_right = 138.0
+offset_bottom = 161.0
+theme_override_font_sizes/font_size = 35
+text = "Chrome"
+
+[node name="Window" type="Window" parent="Chrome"]
+title = "Chrome"
+position = Vector2i(705, 150)
+size = Vector2i(400, 305)
+visible = false
+unresizable = true
+
+[node name="Text" type="LineEdit" parent="Chrome/Window"]
+offset_right = 400.0
+offset_bottom = 31.0
+text = "Google.com"
+placeholder_text = "Search Google"
+
+[node name="Result" type="Label" parent="Chrome/Window"]
+offset_left = 7.0
+offset_top = 33.0
+offset_right = 61.0
+offset_bottom = 56.0
+text = "Google
+Working Websites:
+
+reddit.com
+youtube.com
+google.com"
+
+[node name="Youtube" type="Sprite2D" parent="Chrome/Window"]
+visible = false
+z_index = 4096
+position = Vector2(200, 170)
+scale = Vector2(0.438889, 0.107778)
+texture = ExtResource("3_epypp")
+
+[node name="Reddit" type="Sprite2D" parent="Chrome/Window"]
+visible = false
+position = Vector2(200, 169)
+texture = ExtResource("5_q6r6c")
+
+[node name="Text Editor" type="Node2D" parent="."]
+script = ExtResource("6_d21ai")
+
+[node name="App" type="Button" parent="Text Editor"]
+offset_left = 164.0
+offset_right = 684.0
+offset_bottom = 520.0
+scale = Vector2(0.23, 0.23)
+icon = ExtResource("6_kdubu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Text Editor"]
+offset_left = 175.0
+offset_top = 118.0
+offset_right = 276.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 35
+text = "Text
+Editor"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Window" type="Window" parent="Text Editor"]
+title = "Text Editor"
+position = Vector2i(705, 150)
+size = Vector2i(400, 305)
+visible = false
+unresizable = true
+
+[node name="TextEdit" type="TextEdit" parent="Text Editor/Window"]
+offset_top = -1.0
+offset_right = 401.0
+offset_bottom = 306.0
+placeholder_text = "Text Here..."
+
+[node name="Nasm" type="Node2D" parent="."]
+script = ExtResource("8_4d7sh")
+
+[node name="App" type="Button" parent="Nasm"]
+offset_left = 315.0
+offset_right = 923.0
+offset_bottom = 608.0
+scale = Vector2(0.198, 0.198)
+icon = ExtResource("8_rj586")
+
+[node name="Label" type="Label" parent="Nasm"]
+offset_left = 284.0
+offset_top = 117.0
+offset_right = 462.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 35
+text = "Nasm
+Assem..."
+horizontal_alignment = 1
+
+[node name="Window" type="Window" parent="Nasm"]
+title = "Netwide Assembler (Nasm)"
+position = Vector2i(705, 150)
+size = Vector2i(400, 305)
+visible = false
+unresizable = true
+
+[node name="TextEdit" type="TextEdit" parent="Nasm/Window"]
+offset_right = 245.0
+offset_bottom = 117.0
+placeholder_text = "Dos Asm Code Here..."
+
+[node name="LineEdit" type="LineEdit" parent="Nasm/Window"]
+offset_left = -1.0
+offset_top = 274.0
+offset_right = 401.0
+offset_bottom = 306.0
+placeholder_text = "No Output..."
+
+[node name="Python" type="Node2D" parent="."]
+script = ExtResource("10_x0ka3")
+
+[node name="Label" type="Label" parent="Python"]
+offset_left = 474.0
+offset_top = 146.0
+offset_right = 594.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 35
+text = "Python"
+
+[node name="App" type="Button" parent="Python"]
+offset_left = 478.0
+offset_right = 1686.0
+offset_bottom = 1325.0
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("10_hqns4")
+
+[node name="Window" type="Window" parent="Python"]
+position = Vector2i(705, 150)
+size = Vector2i(400, 305)
+
+[node name="TextEdit" type="TextEdit" parent="Python/Window"]
+offset_right = 402.0
+offset_bottom = 86.0
+placeholder_text = "Python code here..."
+
+[node name="TextEdit2" type="TextEdit" parent="Python/Window"]
+offset_left = 3.0
+offset_top = 195.0
+offset_right = 400.0
+offset_bottom = 307.0
+placeholder_text = "No Output"
+
+[node name="Taskbar" type="Sprite2D" parent="."]
+position = Vector2(576.485, 619.347)
+scale = Vector2(1.246, 1.911)
+texture = ExtResource("1_0hol4")
