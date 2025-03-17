@@ -2,10 +2,10 @@
 This is a windows remake in godot.
 
 # Features:
-Chrome
-Python
+Chrome,
+Python,
 Text Editor
 
 # Coming Soon:
-File Making
+File Making,
 Even more compilers
